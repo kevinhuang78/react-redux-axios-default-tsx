@@ -1,7 +1,8 @@
 import React from "react";
-import { connect } from "react-redux";
+import {connect} from "react-redux";
 import {IQuoteData} from "../reducers";
 import {withQuoteData} from "../helpers/withQuoteData";
+import GenerateNewQuote from "../components/GenerateNewQuote";
 
 interface IProps {
     quote?: {
@@ -21,6 +22,7 @@ const Homepage = (props: IProps) => {
                 <h1>Loading...</h1>
             ) : (
                 <div>
+                    <GenerateNewQuote />
                     <p>{quote && "ID: " + quote['_id']}</p>
                     <p>{quote && "Content: " + quote.content}</p>
                     <p>{quote && "Author: " + quote.author}</p>
